@@ -2,10 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const reviewSchema = new Schema(
   {
-    name: String,
-    email: String,
-    salt: String,
-    hash: String,
+    //usesId => blogId
+    userId: Schema.Types.ObjectId,
+    description: String,
+    cDate: String,
+    uDate: String,
   },
   { collection: "review" }
 );

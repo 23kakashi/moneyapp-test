@@ -77,7 +77,7 @@ const updateBlog = async (id, Title, Body) => {
 
 const deleteBlog = async (id) => {
   try {
-    await blogModel.findByIdAndDelete({ id });
+    await blogModel.findOneAndDelete({ _id: id });
     return {
       message: "blog deleted successfully",
       status: "success",

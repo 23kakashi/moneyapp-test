@@ -56,11 +56,12 @@ blogRouter.patch("/:id", async (req, res) => {
 // delete a blog
 blogRouter.delete("/:id", async (req, res) => {
   const { id } = req.params;
-  const { message, status, data } = await deleteBlog(id);
+  const { message, status } = await deleteBlog(id);
   if (status === "error") {
     return res.status(404).send({ message, status });
   }
   return res.status(200).send({ message, status });
 });
+
 
 module.exports = { blogRouter };
